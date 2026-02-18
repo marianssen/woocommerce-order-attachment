@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Order Attachment\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-18 13:48+0000\n"
+"PO-Revision-Date: 2026-02-18 14:14+0000\n"
+"Last-Translator: \n"
+"Language-Team: Čeština\n"
+"Language: cs_CZ\n"
+"Plural-Forms: nplurals=3; plural=( n == 1 ) ? 0 : ( n >= 2 && n <= 4 ) ? 1 : "
+"2;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.1; wp-6.9; php-8.3.28\n"
+"X-Domain: woocommerce-order-attachment"
+
+#: woocommerce-order-attachment.php:132
+msgid "Allowed file types: pdf, doc, docx, xls, xlsx, jpg, png, zip."
+msgstr "Povolené typy souborů: pdf, doc, docx, xls, xlsx, jpg, png, zip."
+
+#: woocommerce-order-attachment.php:131
+#| msgid "Attach a file to the completed order email:"
+msgid "Attach a file to the completed order email."
+msgstr "K e-mailu s dokončenou objednávkou přiložte soubor."
+
+#. Description of the plugin
+msgid ""
+"Attach a file to WooCommerce completed order emails via a file upload field "
+"on the order edit screen."
+msgstr ""
+"Přiložte soubor k e-mailům s dokončenými objednávkami WooCommerce pomocí "
+"pole pro nahrání souboru na obrazovce úpravy objednávky."
+
+#: woocommerce-order-attachment.php:204
+msgid "Current file:"
+msgstr "Aktuální soubor:"
+
+#. %s: file name
+#: woocommerce-order-attachment.php:155
+#, php-format
+msgid "Current file: %s"
+msgstr "Aktuální soubor: %s"
+
+#: woocommerce-order-attachment.php:206
+msgid "File is too large. Maximum size is 2MB."
+msgstr "Soubor je příliš velký. Maximální velikost je 2 MB."
+
+#. Author URI of the plugin
+msgid "https://yourwebsite.com"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://yourwebsite.com/woocommerce-order-attachment"
+msgstr ""
+
+#: woocommerce-order-attachment.php:98
+msgid "Order Attachment"
+msgstr "Příloha objednávky"
+
+#: woocommerce-order-attachment.php:144 woocommerce-order-attachment.php:205
+msgid "Remove"
+msgstr "Odstranit"
+
+#: woocommerce-order-attachment.php:202
+msgid "Select Attachment"
+msgstr "Vyberte přílohu"
+
+#: woocommerce-order-attachment.php:140
+msgid "Upload / Select File"
+msgstr "Nahrát / Vybrat soubor"
+
+#: woocommerce-order-attachment.php:203
+msgid "Use this file"
+msgstr "Použijte tento soubor"
+
+#. Name of the plugin
+msgid "WooCommerce Order Attachment"
+msgstr ""
+
+#: woocommerce-order-attachment.php:63
+msgid ""
+"WooCommerce Order Attachment requires WooCommerce to be installed and active."
+msgstr ""
+"Příloha objednávky WooCommerce vyžaduje, aby byl WooCommerce nainstalován a "
+"aktivní."
+
+#. Author of the plugin
+msgid "Your Name"
+msgstr ""
