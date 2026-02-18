@@ -3,7 +3,7 @@ jQuery(function ($) {
 
     var mediaUploader;
 
-    $('.woa-upload-btn').on('click', function (e) {
+    $(document).on('click', '.woa-upload-btn', function (e) {
         e.preventDefault();
 
         if (mediaUploader) {
@@ -19,9 +19,7 @@ jQuery(function ($) {
             title: woa_params.i18n.select_attachment,
             button: { text: woa_params.i18n.use_this_file },
             multiple: false,
-            library: {
-                type: allowedTypesKeys.length > 0 ? allowedTypesKeys.join(',') : null
-            }
+            frame: 'select'
         });
 
         mediaUploader.on('select', function () {

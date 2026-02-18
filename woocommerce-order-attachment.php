@@ -38,8 +38,6 @@ function woa_init()
 
     // Save meta box data — covers both classic CPT and HPOS screens.
     add_action('woocommerce_process_shop_order_meta', 'woa_save_attachment_meta');
-    // Save meta box data — covers both classic CPT and HPOS screens.
-    add_action('woocommerce_process_shop_order_meta', 'woa_save_attachment_meta');
     add_action('woocommerce_update_order', 'woa_save_attachment_meta');
 
     // Enqueue admin scripts.
@@ -123,42 +121,39 @@ function woa_meta_box_html($post_or_order)
 
     wp_nonce_field('woa_save_attachment', 'woa_nonce');
     ?>
+    <label for="woa_attachment_id">
+        <strong><?php esc_html_e('Attach a file to the completed order email.', 'woocommerce-order-attachment'); ?></strong><br />
+        <?php esc_html_e('Allowed file types: pdf, doc, docx, xls, xlsx, jpg, png, zip.', 'woocommerce-order-attachment'); ?>
+    </label>
+
+    <input type="hidden" id="woa_attachment_id" name="woa_attachment_id" value="<?php echo esc_attr($attachment_id); ?>" />
+
     <p>
-        <label for="woa_attachment_id">
-            <p>
-                <strong><?php esc_html_e('Attach a file to the completed order email.', 'woocommerce-order-attachment'); ?></strong><br />
-                <?php esc_html_e('Allowed file types: pdf, doc, docx, xls, xlsx, jpg, png, zip.', 'woocommerce-order-attachment'); ?>
-            </p>
+        <button type="button" class="button woa-upload-btn">
+            <?php esc_html_e('Upload / Select File', 'woocommerce-order-attachment'); ?>
+        </button>
+        <?php if ($attachment_id): ?>
+            <button type="button" class="button woa-remove-btn">
+                <?php esc_html_e('Remove', 'woocommerce-order-attachment'); ?>
+            </button>
+        <?php endif; ?>
+    </p>
 
-            <input type="hidden" id="woa_attachment_id" name="woa_attachment_id"
-                value="<?php echo esc_attr($attachment_id); ?>" />
-
-            <p>
-                <button type="button" class="button woa-upload-btn">
-                    <?php esc_html_e('Upload / Select File', 'woocommerce-order-attachment'); ?>
-                </button>
-                <?php if ($attachment_id): ?>
-                    <button type="button" class="button woa-remove-btn">
-                        <?php esc_html_e('Remove', 'woocommerce-order-attachment'); ?>
-                    </button>
-                <?php endif; ?>
-            </p>
-
-            <?php if ($file_name): ?>
-                <p class="woa-file-name">
-                    <?php
-                    echo esc_html(
-                        sprintf(
-                            /* translators: %s: file name */
-                            __('Current file: %s', 'woocommerce-order-attachment'),
-                            $file_name
-                        )
-                    );
-                    ?>
-                </p>
-            <?php endif; ?>
-
+    <?php if ($file_name): ?>
+        <p class="woa-file-name">
             <?php
+            echo esc_html(
+                sprintf(
+                    /* translators: %s: file name */
+                    __('Current file: %s', 'woocommerce-order-attachment'),
+                    $file_name
+                )
+            );
+            ?>
+        </p>
+    <?php endif; ?>
+
+    <?php
 }
 
 /**
@@ -190,8 +185,8 @@ function woa_admin_scripts($hook)
     wp_enqueue_script(
         'woa-admin-js',
         plugin_dir_url(__FILE__) . 'assets/js/admin.js',
-        array('jquery'),
-        '1.0.1',
+        array('jquery', 'wp-mediaelement'),
+        '1.1.0',
         true
     );
 
